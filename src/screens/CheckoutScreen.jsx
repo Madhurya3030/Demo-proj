@@ -10,9 +10,13 @@ export default function CheckoutScreen({
   setGroupBuyJoined
 }) {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const checkoutProducts = location.state?.products || products;
+  const checkoutFromSaheli = location.state?.isSaheli || false;
 
   // If cart is empty, show empty state
-  if (!products || products.length === 0) {
+  if (!checkoutProducts || checkoutProducts.length === 0) {
     return (
       <div className="max-w-md mx-auto px-4 py-16 text-center space-y-4">
         <div className="w-16 h-16 bg-pink-50 text-[#F43397] rounded-full flex items-center justify-center mx-auto">
@@ -31,13 +35,10 @@ export default function CheckoutScreen({
   }
 
   // Calculate totals
-  const cartTotal = products.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0);
-  const betterSellerDiscount = isSaheli ? 120 : 0;
-  const groupBuySavings = isSaheli ? 180 : 0;
-  const location = useLocation();
+  const cartTotal = checkoutProducts.reduce((sum, item) => sum + (item.price * (item.quantity || 1)), 0);
+  const betterSellerDiscount = checkoutFromSaheli ? 120 : 0;
+  const groupBuySavings = checkoutFromSaheli ? 180 : 0;
 
-  const checkoutProducts = location.state?.products || products;
-const checkoutFromSaheli = location.state?.isSaheli || false;
   // Final Calculations
   const subtotal = cartTotal;
   const finalPrice = Math.max(0, subtotal - betterSellerDiscount - (groupBuyJoined ? groupBuySavings : 0));
@@ -46,17 +47,17 @@ const checkoutFromSaheli = location.state?.isSaheli || false;
     <div className="max-w-3xl mx-auto px-4 py-6 text-meesho-textDark">
       {/* Back button */}
       <button 
-        onClick={() => navigate(isSaheli ? '/recommendations' : '/')}
+        onClick={() => navigate(checkoutFromSaheli ? '/recommendations' : '/')}
         className="flex items-center gap-1.5 text-xs text-[#F43397] font-bold hover:underline mb-6 focus:outline-none"
       >
         <ArrowLeft size={14} />
-        {isSaheli ? "Back to Recommendations" : "Back to Home"}
+        {checkoutFromSaheli ? "Back to Recommendations" : "Back to Home"}
       </button>
 
       {/* Header */}
       <div className="mb-6 pb-4 border-b border-meesho-borderLight text-center md:text-left">
         <h1 className="text-xl font-bold flex items-center justify-center md:justify-start gap-2">
-          {isSaheli ? (
+          {checkoutFromSaheli ? (
             <>
               <ShieldCheck className="text-green-600" size={24} />
               <span>Saheli Cart Optimization & Checkout</span>
@@ -69,7 +70,7 @@ const checkoutFromSaheli = location.state?.isSaheli || false;
           )}
         </h1>
         <p className="text-xs text-meesho-textMuted mt-1">
-          {isSaheli 
+          {checkoutFromSaheli 
             ? "Saheli has matched products, applied coupons, and coordinated logistics." 
             : "Review your items and place your cash on delivery order."}
         </p>
@@ -83,11 +84,11 @@ const checkoutFromSaheli = location.state?.isSaheli || false;
           <div className="bg-white border border-meesho-borderLight rounded-lg p-5 shadow-sm space-y-4">
             <h3 className="text-sm font-black text-meesho-textDark border-b border-meesho-borderLight pb-2.5 flex items-center gap-2">
               <Package size={18} className="text-[#F43397]" />
-              <span>Your Items ({products.length})</span>
+              <span>Your Items ({checkoutProducts.length})</span>
             </h3>
             
             <div className="space-y-4">
-              {products.map((item) => (
+              {checkoutProducts.map((item) => (
                 <div key={item.id} className="flex gap-4 border-b border-meesho-bgLight pb-4 last:border-b-0 last:pb-0">
                   <div className="w-16 h-16 rounded overflow-hidden bg-meesho-bgLight border border-meesho-borderLight shrink-0">
                     <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
@@ -109,7 +110,7 @@ const checkoutFromSaheli = location.state?.isSaheli || false;
             </div>
           </div>
 
-          {isSaheli ? (
+          {checkoutFromSaheli ? (
             <>
               {/* Saheli Optimizations */}
               <div className="space-y-3">
@@ -261,16 +262,16 @@ const checkoutFromSaheli = location.state?.isSaheli || false;
 
             <div className="space-y-2.5 text-xs text-meesho-textDark">
               <div className="flex justify-between">
-                <span className="text-meesho-textMuted">{isSaheli ? "Product Bundle Total" : "Product Total"}</span>
+                <span className="text-meesho-textMuted">{checkoutFromSaheli ? "Product Bundle Total" : "Product Total"}</span>
                 <span>₹{subtotal}</span>
               </div>
-              {isSaheli && (
+              {checkoutFromSaheli && (
                 <div className="flex justify-between text-green-600 font-medium">
                   <span>Seller Swap Discount</span>
                   <span>- ₹{betterSellerDiscount}</span>
                 </div>
               )}
-              {isSaheli && groupBuyJoined && (
+              {checkoutFromSaheli && groupBuyJoined && (
                 <div className="flex justify-between text-green-600 font-medium">
                   <span>Group Buy Discount</span>
                   <span>- ₹{groupBuySavings}</span>

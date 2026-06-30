@@ -51,7 +51,11 @@ export default function Header({ cartCount = 5, setMissionText, setCheckoutSourc
             className="flex items-center gap-1.5 px-4 py-2.5 bg-gradient-to-r from-[#F43397] to-[#7f1d1d] hover:from-[#cf1b78] hover:to-[#5c1313] text-white rounded-md transition duration-200 text-sm font-extrabold whitespace-nowrap shadow-sm hover:scale-102 active:scale-98 cursor-pointer"
           >
             <Sparkles size={15} />
-            <span>🤖 Saheli</span>
+            <span
+  className="font-['Cinzel'] text-[16px] tracking-wider font-bold"
+>
+  Saheli
+</span>
           </button>
         </div>
 

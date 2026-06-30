@@ -135,7 +135,7 @@ export default function HomeScreen({ onSelectProduct, onAddToCart, onBuyNow }) {
                   >
                     {/* Image Section */}
                     <div 
-                      onClick={() => onSelectProduct && onSelectProduct(p)}
+                      onClick={() => onSelectProduct && onSelectProduct(p, "homepage")}
                       className="relative aspect-square bg-meesho-bgLight flex items-center justify-center overflow-hidden cursor-pointer"
                     >
                       <img 
@@ -162,7 +162,7 @@ export default function HomeScreen({ onSelectProduct, onAddToCart, onBuyNow }) {
                     <div className="p-3.5 flex-1 flex flex-col justify-between">
                       <div className="space-y-1.5">
                         <h4 
-                          onClick={() => onSelectProduct && onSelectProduct(p)}
+                          onClick={() => onSelectProduct && onSelectProduct(p, "homepage")}
                           className="text-xs text-meesho-textMuted font-bold truncate hover:text-[#F43397] transition cursor-pointer"
                         >
                           {p.name}

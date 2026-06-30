@@ -221,7 +221,7 @@ export default function RecommendationsScreen({
                             ? "border-[#F43397] ring-1 ring-[#F43397]/20 shadow-sm" 
                             : "border-meesho-borderLight"
                         }`}
-                        onClick={() => onSelectProduct(p)}
+                        onClick={() => onSelectProduct(p, "saheli")}
                       >
                         {/* Image & Badges */}
                         <div className="relative aspect-square bg-meesho-bgLight flex items-center justify-center overflow-hidden">
@@ -299,7 +299,7 @@ export default function RecommendationsScreen({
                                 className="w-full py-1.5 border border-[#F43397] text-[#F43397] hover:bg-[#F43397] hover:text-white text-xs font-bold rounded transition cursor-pointer"
                                 onClick={(e) => {
                                   e.stopPropagation();
-                                  onSelectProduct(p);
+                                  onSelectProduct(p, "saheli");
                                 }}
                               >
                                 View Product

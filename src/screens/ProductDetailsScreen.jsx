@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Sparkles, Check, X, Star, RefreshCw, ShoppingBag, Shield, CheckCircle, Flame } from 'lucide-react';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
+import { ArrowLeft, Sparkles, Check, X, Star, RefreshCw, ShoppingBag, CheckCircle } from 'lucide-react';
 
 export default function ProductDetailsScreen({ 
   allProducts = [], 
@@ -9,19 +9,38 @@ export default function ProductDetailsScreen({
   onBack, 
   onReplaceProduct,
   onAddToCart,
-  onBuyNow,
-  setCheckoutSource
+  onBuyNow
 }) {
   const { id } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
+  const source = location.state?.source || "homepage";
   const productId = parseInt(id);
 
   const foundProduct = allProducts.find(p => p.id === productId) || homepageProducts.find(p => p.id === productId);
 
-  // Scroll to top when product changes
+  // Sizing & Color local state (defined unconditionally at top to satisfy rules of hooks)
+  const [selectedSize, setSelectedSize] = useState(() => {
+    const p = allProducts.find(item => item.id === productId) || homepageProducts.find(item => item.id === productId);
+    return p?.sizes?.[0] || "Free Size";
+  });
+  const [selectedColor, setSelectedColor] = useState(() => {
+    const p = allProducts.find(item => item.id === productId) || homepageProducts.find(item => item.id === productId);
+    return p?.colors?.[0] || "Default";
+  });
+  const [quantity, setQuantity] = useState(1);
+  const [activeImageIdx, setActiveImageIdx] = useState(0);
+
+  // Scroll to top and reset state when product/id changes
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [id]);
+    if (foundProduct) {
+      setSelectedSize(foundProduct.sizes?.[0] || "Free Size");
+      setSelectedColor(foundProduct.colors?.[0] || "Default");
+      setQuantity(1);
+      setActiveImageIdx(0);
+    }
+  }, [id, foundProduct]);
 
   if (!foundProduct) {
     return (
@@ -52,12 +71,6 @@ export default function ProductDetailsScreen({
     category: foundProduct.category || foundProduct.sectionName || foundProduct.section || "General",
     ...foundProduct
   };
-
-  // Sizing & Color local state
-  const [selectedSize, setSelectedSize] = useState(product.sizes?.[0] || "Free Size");
-  const [selectedColor, setSelectedColor] = useState(product.colors?.[0] || "Default");
-  const [quantity, setQuantity] = useState(1);
-  const [activeImageIdx, setActiveImageIdx] = useState(0);
 
   // Check if this product is currently in the active bundle
   const isInBundle = products.some(bundleItem => bundleItem.id === product.id);
@@ -106,7 +119,7 @@ export default function ProductDetailsScreen({
           className="flex items-center gap-1.5 text-xs text-[#F43397] font-black hover:underline cursor-pointer focus:outline-none"
         >
           <ArrowLeft size={14} />
-          {productId < 1000 ? "Back to Homepage" : "Back to Recommendations"}
+          {source === "homepage" ? "Back to Homepage" : "Back to Recommendations"}
         </button>
         <div className="text-xs text-meesho-textMuted font-bold">
           Category: <span className="uppercase text-[#F43397]">{product.category}</span>
@@ -155,7 +168,7 @@ export default function ProductDetailsScreen({
           
           {/* Product Title and Rating */}
           <div className="space-y-2">
-            {productId >= 1000 && (
+            {source === "saheli" && (
               <div className="flex items-center gap-1.5">
                 <span className="bg-purple-50 text-[#F43397] text-[10px] font-black px-2.5 py-0.5 rounded border border-pink-100 uppercase tracking-wider flex items-center gap-0.5">
                   <Sparkles size={8} />
@@ -285,7 +298,7 @@ export default function ProductDetailsScreen({
 
           {/* Action CTAs */}
           <div className="flex flex-col gap-3 pt-2">
-            {productId < 1000 ? (
+            {source === "homepage" ? (
               <>
                 <button 
                   type="button"
@@ -481,7 +494,7 @@ navigate("/checkout", {
       </div>
 
       {/* Recommended Alternatives section (swap-capable) */}
-      {productId >= 1000 && alternatives.length > 0 && (
+      {source === "saheli" && alternatives.length > 0 && (
         <div className="space-y-4">
           <div className="flex justify-between items-center border-b border-meesho-borderLight pb-2">
             <h3 className="text-sm font-black text-meesho-textDark uppercase tracking-wider flex items-center gap-1.5">
