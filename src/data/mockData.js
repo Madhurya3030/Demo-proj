@@ -1,61 +1,103 @@
-// Unsplash image lists for homepage sections
 const homeImages = {
   trending: [
     "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=300&q=80",
     "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=300&q=80",
     "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=300&q=80",
-    "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=300&q=80"
+    "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80"
   ],
+
   recommended: [
     "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=300&q=80",
     "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=300&q=80",
     "https://images.unsplash.com/photo-1479064555552-3ef4979f8908?auto=format&fit=crop&w=300&q=80",
-    "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=300&q=80"
+    "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80"
   ],
+
   best_sellers: [
     "https://images.unsplash.com/photo-1554412933-514a83d2f3c8?auto=format&fit=crop&w=300&q=80",
     "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=300&q=80",
     "https://images.unsplash.com/photo-1540221652346-e5dd6b50f3e7?auto=format&fit=crop&w=300&q=80",
-    "https://images.unsplash.com/photo-1578587018452-892bacefd3f2?auto=format&fit=crop&w=300&q=80"
+    "https://images.unsplash.com/photo-1578587018452-892bacefd3f2?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=300&q=80"
   ],
+
   deals_under_499: [
     "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=300&q=80",
     "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=300&q=80",
     "https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=300&q=80",
-    "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?auto=format&fit=crop&w=300&q=80"
+    "https://images.unsplash.com/photo-1571513722275-4b41940f54b8?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1542840410-3092f99611a3?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1543508282-6319a3e2621f?auto=format&fit=crop&w=300&q=80"
   ],
+
   womens_fashion: [
     "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=300&q=80",
     "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80",
     "https://images.unsplash.com/photo-1618244972963-dbee1a7edc95?auto=format&fit=crop&w=300&q=80",
-    "https://images.unsplash.com/photo-1564564244660-5d73c057f2d2?auto=format&fit=crop&w=300&q=80"
+    "https://images.unsplash.com/photo-1564564244660-5d73c057f2d2?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=300&q=80"
   ],
+
   jewellery: [
     "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=300&q=80",
     "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=300&q=80",
     "https://images.unsplash.com/photo-1635767790028-3e9c53654519?auto=format&fit=crop&w=300&q=80",
-    "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=300&q=80"
+    "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1588444650733-d53f2bb0f4b7?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1603974372039-adc49044b6bd?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1627293509201-cd0c780043c1?auto=format&fit=crop&w=300&q=80"
   ],
+
   home_essentials: [
     "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=300&q=80",
     "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=300&q=80",
     "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=300&q=80",
-    "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=300&q=80"
+    "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1484101403633-562f891dc89a?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1493666438817-866a91353ca9?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=300&q=80"
   ],
+
   beauty: [
     "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=300&q=80",
     "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=300&q=80",
     "https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=300&q=80",
-    "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=300&q=80"
+    "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80"
   ],
+
   electronics: [
     "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=300&q=80",
     "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=300&q=80",
     "https://images.unsplash.com/photo-1468495244123-6c6c332eeece?auto=format&fit=crop&w=300&q=80",
-    "https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=300&q=80"
+    "https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1517336714739-489689fd1ca8?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=300&q=80",
+    "https://images.unsplash.com/photo-1510557880182-3f8cbf6d4d28?auto=format&fit=crop&w=300&q=80"
   ]
 };
-
 // Programmatically generate 90 homepage products (10 products * 9 categories)
 export const getHomepageProducts = () => {
   const sections = [
@@ -100,6 +142,31 @@ export const getHomepageProducts = () => {
   return products;
 };
 
+const sareeImages = [
+  "/saree.png",
+  "/saree2.png"
+];
+
+const heelsImages = [
+  "/heels.png",
+  "/heels2.png"
+];
+
+const earringImages = [
+  "/earrings.png",
+  "/earrings2.png"
+];
+
+const clutchImages = [
+  "/clutch.png",
+  "/clutch2.png"
+];
+
+const giftImages = [
+  "/giftbox.png",
+  "/giftbox2.png"
+];
+
 // Generate 50 recommendation items grouped by categories:
 // 👗 Sarees (12 Products)
 // 👠 Heels (10 Products)
@@ -118,7 +185,7 @@ export const getRecommendationProducts = () => {
     id: 1001,
     category: "saree",
     name: "Magenta Banarasi Silk Saree",
-    image: "/saree.png",
+    image: sareeImages[0],
     price: 1250,
     originalPrice: 2500,
     rating: 4.8,
@@ -148,7 +215,7 @@ export const getRecommendationProducts = () => {
       id: 1002 + idx,
       category: "saree",
       name,
-      image: "/saree.png",
+      image: sareeImages[idx % 2],
       price,
       originalPrice,
       rating: (4.1 + idx * 0.05).toFixed(1),
@@ -174,7 +241,7 @@ export const getRecommendationProducts = () => {
     id: 2001,
     category: "heels",
     name: "Golden-Strap Heel Sandal",
-    image: "/heels.png",
+    image: heelsImages[0],
     price: 480,
     originalPrice: 999,
     rating: 4.5,
@@ -202,7 +269,7 @@ export const getRecommendationProducts = () => {
       id: 2002 + idx,
       category: "heels",
       name,
-      image: "/heels.png",
+      image: heelsImages[idx % 2],
       price,
       originalPrice,
       rating: (4.0 + idx * 0.07).toFixed(1),
@@ -228,7 +295,7 @@ export const getRecommendationProducts = () => {
     id: 3001,
     category: "earrings",
     name: "Ruby Designer Gold Jhumkas",
-    image: "/earrings.png",
+   image: earringImages[0],
     price: 220,
     originalPrice: 500,
     rating: 4.6,
@@ -256,7 +323,7 @@ export const getRecommendationProducts = () => {
       id: 3002 + idx,
       category: "earrings",
       name,
-      image: "/earrings.png",
+      image: earringImages[idx % 2],
       price,
       originalPrice: Math.round(originalPrice),
       rating: (4.2 + idx * 0.05).toFixed(1),
@@ -282,7 +349,7 @@ export const getRecommendationProducts = () => {
     id: 4001,
     category: "clutch",
     name: "Satin Designer Clutch",
-    image: "/clutch.png",
+    image: clutchImages[0],
     price: 350,
     originalPrice: 800,
     rating: 4.4,
@@ -310,7 +377,7 @@ export const getRecommendationProducts = () => {
       id: 4002 + idx,
       category: "clutch",
       name,
-      image: "/clutch.png",
+      image: clutchImages[idx % 2],
       price,
       originalPrice: Math.round(originalPrice),
       rating: (4.1 + idx * 0.07).toFixed(1),
@@ -336,7 +403,7 @@ export const getRecommendationProducts = () => {
     id: 5001,
     category: "gift",
     name: "Luxury Perfume Gift Box",
-    image: "/giftbox.png",
+   image: giftImages[0],
     price: 200,
     originalPrice: 499,
     rating: 4.7,
@@ -364,7 +431,7 @@ export const getRecommendationProducts = () => {
       id: 5002 + idx,
       category: "gift",
       name,
-      image: "/giftbox.png",
+     image: giftImages[idx % 2],
       price,
       originalPrice: Math.round(originalPrice),
       rating: (4.2 + idx * 0.05).toFixed(1),
