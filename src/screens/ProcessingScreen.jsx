@@ -42,7 +42,7 @@ export default function ProcessingScreen() {
             <Sparkles size={20} />
           </div>
           <div>
-            <h3 className="text-sm font-bold">Meesho AI Companion</h3>
+            <h3 className="text-sm font-bold">Saheli</h3>
             <p className="text-[11px] text-meesho-textMuted">Running optimization pipeline...</p>
           </div>
         </div>

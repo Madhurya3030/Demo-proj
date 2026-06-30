@@ -163,7 +163,7 @@ export default function CartScreen({
             {/* Coupon alert */}
             <div className="summary-coupon-applied">
               <Ticket size={16} />
-              <span>Coupon <strong>"COMPANION20"</strong> applied successfully!</span>
+              <span>Coupon <strong>"SAHELI20"</strong> applied successfully!</span>
             </div>
 
             {/* Buttons */}

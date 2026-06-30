@@ -37,7 +37,7 @@ export default function PostPurchaseScreen({ onReset }) {
           <div className="space-y-2">
             <h2 className="text-xl font-bold">Order Placed Successfully!</h2>
             <p className="text-xs text-meesho-textMuted leading-relaxed">
-              Your AI Shopping Companion has successfully completed the purchase and notified the merchants.
+              Saheli has successfully completed the purchase and notified the merchants.
             </p>
           </div>
 
@@ -104,7 +104,7 @@ export default function PostPurchaseScreen({ onReset }) {
               </div>
 
               <p className="text-xs text-meesho-textMuted leading-relaxed">
-                Based on your return reason <strong>"{selectedReason.text}"</strong>, the AI companion has updated your shopper profile constraints:
+                Based on your return reason <strong>"{selectedReason.text}"</strong>, Saheli has updated your shopper profile constraints:
               </p>
 
               <div className="space-y-3.5 text-xs text-meesho-textDark bg-meesho-bgLight p-4 rounded border border-meesho-borderLight">
